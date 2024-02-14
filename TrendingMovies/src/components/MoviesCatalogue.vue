@@ -4,6 +4,7 @@
   const store = useMoviesStore()
 
   let movies = ref(null)
+  movies.value = store.movieCatalogue
 
   watch(
     () => store.movieCatalogue,
@@ -11,25 +12,22 @@
       movies.value = newValue
     }
   )
-  movies.value = store.movieCatalogue
 </script>
 
 <template>
   <div v-if="movies !== null" class="flex gap-4 flex-wrap mx-10 justify-center">
-    <div
-      :key="movie.title"
-      v-for="movie in movies"
-      class="group cursor-pointer"
-    >
+    <div :key="movie.id" v-for="movie in movies" class="group cursor-pointer">
       <RouterLink
         :to="
-          movie.title
-            ? `/movie/${movie.title}`
-            : `/movie/${movie.original_name}`
+          movie.original_title
+            ? `/movie/${movie.original_title}`
+            : `/movie/${movie.name}`
         "
         ><img
           :src="`https://image.tmdb.org/t/p/w500${movie.poster_path} `"
-          :alt="`${movie.title} Movie Poster`"
+          :alt="`${
+            movie.original_title ? movie.original_title : movie.name
+          } Movie Poster`"
           class="h-[300px] group-hover:opacity-70"
       /></RouterLink>
 

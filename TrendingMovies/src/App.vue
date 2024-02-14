@@ -1,7 +1,7 @@
 <script setup>
-  import HelloWorld from './components/HelloWorld.vue'
   import axios from 'axios'
   import { useMoviesStore } from './store'
+  import NavBar from './components/NavBar.vue'
 
   const store = useMoviesStore()
 
@@ -23,5 +23,6 @@
 </script>
 
 <template>
+  <NavBar />
   <main><RouterView /></main>
 </template>
