@@ -26,8 +26,7 @@
   >
     <div v-if="!isHovered" class="flex justify-end items-center cursor-pointer">
       <svg
-        :class="`w-8 h-8 fill-current text-gray-400 hover:text-yellow-400  ${
-          chosenRating > 4 ? 'text-yellow-500' : ''
+        :class="`w-8 h-8 fill-current text-yellow-400
         }`"
         viewBox="0 0 24 24"
       >
