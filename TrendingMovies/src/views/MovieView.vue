@@ -38,7 +38,10 @@
 </script>
 
 <template>
-  <div v-if="selectedMovie" class="bg-black pt-10 grid grid-cols-2 pb-24">
+  <div
+    v-if="selectedMovie"
+    class="bg-black pt-10 grid grid-cols-2 pb-24 h-[calc(100vh-128px)]"
+  >
     <div class="px-5 grid justify-center">
       <h1 class="text-white alfa-slab-regular text-3xl">
         {{ selectedMovie.original_title || selectedMovie.name }}
@@ -57,7 +60,7 @@
         class="max-h-[500px]"
       />
     </div>
-    <div class="grid justify-center pr-56">
+    <div class="grid justify-center px-3 sm:pr-[10%] lg:pr-56">
       <div>
         <MovieRating
           @rating-chosen="ratingChosen"

@@ -24,7 +24,7 @@
     @mouseenter="() => (isHovered = true)"
     @mouseleave="() => (isHovered = false)"
   >
-    <div v-if="!isHovered" class="flex justify-end items-center cursor-pointer">
+    <div v-if="!isHovered" class="flex justify-end items-center">
       <svg
         :class="`w-8 h-8 fill-current text-yellow-400
         }`"
@@ -38,7 +38,7 @@
     </div>
 
     <div v-else class="flex justify-end">
-      <label class="inline-flex items-center">
+      <label class="inline-flex items-center cursor-pointer">
         <input
           type="radio"
           v-model="chosenRating"
@@ -57,7 +57,7 @@
           />
         </svg>
       </label>
-      <label class="inline-flex items-center">
+      <label class="inline-flex items-center cursor-pointer">
         <input
           type="radio"
           v-model="chosenRating"
@@ -76,7 +76,7 @@
           />
         </svg>
       </label>
-      <label class="inline-flex items-center">
+      <label class="inline-flex items-center cursor-pointer">
         <input
           type="radio"
           v-model="chosenRating"
@@ -95,7 +95,7 @@
           />
         </svg>
       </label>
-      <label class="inline-flex items-center">
+      <label class="inline-flex items-center cursor-pointer">
         <input
           type="radio"
           v-model="chosenRating"
@@ -114,7 +114,7 @@
           />
         </svg>
       </label>
-      <label class="inline-flex items-center">
+      <label class="inline-flex items-center cursor-pointer">
         <input
           type="radio"
           v-model="chosenRating"
